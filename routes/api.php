@@ -17,12 +17,11 @@ use App\Http\Controllers\AdminController;
 |
 */
 Route::resource('/clients', ClientController::class);
-Route::post('/login', [AdminController::class, 'login']);
 
 Route::get('/getAdminInfo', [AdminController::class, 'showInfo']);
 // Route::post('/createNewAdmin', [AdminController::class, 'showInfo']);
 
-Route::get('/billings/{ClientId}', [BillingsController::class, 'index']);
+Route::get('/billings', [BillingsController::class, 'index']);
 Route::get('/billings/{id}', [BillingsController::class, 'BillDetail']);
 
 

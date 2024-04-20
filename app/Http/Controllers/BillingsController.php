@@ -8,11 +8,11 @@ use App\Models\Billings;
 
 class BillingsController extends Controller
 {
-    public function index(Request $request, $userId)
+    public function index(Request $request)
     {
         //list all current user billing
         $billings = Billings::find(
-            ['UserId' => $userId],
+            ['UserId' => $request->clientId],
             ['projection' => [
                 'UserId' => 1, 
                 "ProjectName" => 1 ,
@@ -21,7 +21,6 @@ class BillingsController extends Controller
                 "Outstanding" => 1
             ]]
         );
-
         if ($billings!==null){
             return response()->json([
                 'Message'=>'Success',

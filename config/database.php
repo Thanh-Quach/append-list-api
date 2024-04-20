@@ -36,9 +36,9 @@ return [
     'connections' => [
 
         'mongodb' => [
-            'driver' => 'mongodb',
-            'dsn' => env('DB_URI', 'mongodb+srv://redjestar:9S6p0QwYTZk9RDCr@werkaiser.brkgzxe.mongodb.net/?retryWrites=true&w=majority'),
-            'database'=>'werkaiser',
+            'driver' => env('DB_CONNECTION'),
+            'dsn' => env('DATABASE_URL'),
+            'database'=>env('DB_DATABASE'),
         ],
 
         'sqlite' => [
